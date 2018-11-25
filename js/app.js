@@ -1,26 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // CREATE NEW FORM
+  // CREATE NEW FORM / SAVE BUTTON
   const createNewForm = document.querySelector('#new-item-form');
   createNewForm.addEventListener('submit', submitNewForm);
 
   // DELETE FORMS
-  // const deleteAllButton = document.querySelector('#delete-all');
-  // deleteAllButton.addEventListener('click', handleDeleteAllClick);
+  const deleteAllButton = document.querySelector('#delete-all');
+  deleteAllButton.addEventListener('click', deleteAll);
 })
 
+
+//SUBMIT NEW FORM
 const submitNewForm = function (event) {
   event.preventDefault();
 
-  const createNewForm = createNewFormItem(event.target);
+  const newFormItem = createNewFormItem(event.target);
   const movieList = document.querySelector('#movie-list');
-  movieList.appendChild(createNewForm);
+  movieList.appendChild(newFormItem);
 
   event.target.reset();
-
-
 };
 
+// NEW FORM ATTRIBUTES
 const createNewFormItem = function (form) {
 
   const newFormItem = document.createElement('ul');
@@ -39,4 +40,9 @@ const createNewFormItem = function (form) {
   newFormItem.appendChild(genre);
 
   return newFormItem;
+}
+
+const deleteAll = function (event) {
+  const movieList = document.querySelector('#movie-list');
+  movieList.innerHTML = 'Movie List Deleted!!!';
 }
