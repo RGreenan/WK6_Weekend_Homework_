@@ -9,6 +9,7 @@
 
 <body>
   <h1>Ray's Favourite Movies</h1>
+
   <form id="new-item-form">
 
     <div id="form-wrapper"> <!-- TODO: create .css class for this later!  -->
@@ -24,8 +25,24 @@
       <input type="text" id="director" required/>
     </div>
 
+    <div class="form-item">
+      <label for="genre">Genre:</label>
+      <select id="genre">
+        <option value="" disabled selected></option>
+        <option value="horror">Horror</option>
+        <option value="action">Action</option>
+        <option value="comedy">Comedy</option>
+        <option value="arnold-schwarzenegger">Arnold Schwarzenegger</option>
+      </select>
+    </div>
+
+    <input type="submit" value="save">
 
   </form>
+
+  <h2>Movie List...</h2>
+
+  <div id="movie-list"></div> <!-- TODO: create .css class for this later! -->
 
 </body>
 </html>
@@ -52,6 +69,7 @@
 <option value="Blog Post">Blog Post</option>
 </select>
 </div>
+
 </div>
 <input type="submit" value="save"/>
 </form> -->
